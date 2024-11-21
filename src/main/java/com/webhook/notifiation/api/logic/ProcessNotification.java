@@ -28,6 +28,9 @@ public class ProcessNotification {
     public void processMercantilNotification(NotificationRequestDto notificationRequest) {
         Gson gson = new Gson();
         String decryptedJson = securityUtils.decrypt(notificationRequest.getData());
+        System.out.println("Se recibe la notificacion de pago: ");
+        System.out.println(gson.toJson(decryptedJson));
+        
         
         if (decryptedJson != null) {
             try {
